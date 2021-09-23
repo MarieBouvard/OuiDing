@@ -1,0 +1,65 @@
+<br/>
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <div class="row mx-auto">
+    <h3 class="text-center">Toutes les locations proposées</h3>
+
+    <h4 class="text-center">
+      <%= link_to 'Nouvelle location à proposer', new_location_path, class:"links" %><br/><br/>
+    </h4>
+  </div>
+
+      <div class="container" style="margin-top:50px;">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <% @locations.each do |location| %>
+          
+          <div class="col">
+            <div class="card-sl shadow-lg">
+              <div class="card-image">
+                <%= image_tag location.picture, class:"img-fluid", width: "auto" if location.picture.attached? %>
+              </div>
+              <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                <div class="card-heading">
+                  <%= location.name %>
+                </div>
+                <div class="card-text">
+                  Superficy : <%= location.superficy %>
+                </div>
+                <div class="card-text">
+                  Pièces : <%= location.rooms %>
+                </div>
+                <div class="card-text">
+                 Prix : <%= location.price %> €
+                </div>
+
+                <div class="col mx-auto text-center">
+                  <%= link_to 'Détails', location, class:"links" %>     
+                  <%= link_to 'Modifier', edit_location_path(location), class:"links" %>     
+                  <%= link_to 'Supprimer', location, method: :delete, data: { confirm: 'En êtes-vous sûrs ?' }, class:"links" %>
+                </div>
+            </div>
+          </div>
+       
+        <% end %>
+      </div> 
+    </div>
+
+ 
+
+<br/>
+<br/>
+<br>
+
+<% else %>
+<br/>
+<div class="row">
+  <div class="col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Vous avez besoin d'être connecté pour voir vos réservations!</div>
+        <div class="card-body">
+          <%= link_to 'Se connecter', new_user_session_path %>
+        </div>
+    </div>
+  </div>
+</div>
+<% end %>

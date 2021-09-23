@@ -1,0 +1,324 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+  body {
+    background:url('/assets/back2.jpg') #444 no-repeat;
+    font-family: "Open Sans", sans-serif;
+  }
+
+
+  /* ---- Slider ---- */
+
+  .carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    min-height: 300px;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+
+  .carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.3;
+  }
+
+  .carousel-caption {
+    bottom: 220px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 45px;
+    letter-spacing: 2px;
+    margin-top: 25px; 
+    font-family: 'poppins'
+  }
+
+  .carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.9;
+    font-family: 'poppins';
+  }
+
+  .carousel-caption a {
+    background: #e74c3c;
+    padding: 10px 30px;
+    display: inline-block;
+    color: #fff;
+    margin-top: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+  }
+
+  .carousel-item h5 {
+    font-size: 80px;
+    font-weight: 700;
+  }
+
+  .carousel-item h4 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+/*---Navbar ---*/
+
+#body2 {
+  background-color: black;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-family: 'poppins';
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 15px;
+  color: #fff;
+}
+
+.navbar-light .navbar-brand {
+  font-size: 25px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+
+.navbar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  padding: 0.2rem 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff !important;
+}
+
+.w-100 {
+  height: 100vh;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-nav.mx-auto {
+    background: rgba(0,0,0,0.5);
+  }
+  .navbar-toggler{
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background: #fff;
+  }
+}
+
+
+/*--- Thumbnails---*/
+.card-title {
+  font-family: 'Kaisei Tokumin', serif;
+}
+
+.card {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body .text {
+  font-family: 'Poppins';
+}
+
+/* --- Footer ---- */
+#body {
+  background-color: black;
+  font-family: 'Poppins';
+}
+
+footer h1 {
+  font-weight: 400;
+  font-size: 50px;
+  color: #e74c3c;
+}
+
+/*---SignUp, signIn, Edit profile ---*/
+
+.card-header {
+  font-family: 'poppins';
+  font-size: 28px;
+  background: -webkit-linear-gradient(left, #9ed2d5, #7b7962);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.formControl {
+  border-radius: 20px;
+  border: 0px;
+  width: auto;
+  padding: 5px;
+  background: -webkit-linear-gradient(left, #9ed2d5, #d9d7bf);
+  color: #fff;
+  outline: none;
+}
+
+@media screen and (max-width: 767px) {}
+
+
+.card-body {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.btnbis {
+    border:none;
+    border-radius:1.5rem;
+    padding: 3%;
+    width: auto;
+    cursor: pointer;
+    background: #e74c3c;
+    color: #fff;
+    font-family: 'poppins'
+}
+
+.btnbis2 {
+  border:none;
+  border-radius:1.5rem;
+  padding: 3%;
+  width: auto;
+  cursor: pointer;
+  background: -webkit-linear-gradient(left, #9ed2d5, #7b7962);
+  color: #fff;
+  font-family: 'poppins'
+}
+
+.links {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px; 
+  font-family: 'poppins';
+}
+
+   /*  Helper Styles */
+   body {
+    font-family: 'poppins';
+    background: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Card Styles */
+
+.card-sl {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px 8px 0px 0;
+}
+
+.card-action {
+    position: relative;
+    float: right;
+    margin-top: -25px;
+    margin-right: 20px;
+    z-index: 2;
+    color: #e74c3c;
+    background: #fff;
+    border-radius: 100%;
+    padding: 15px;
+    font-size: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-action:hover {
+    color: #fff;
+    background: #E26D5C;
+    -webkit-animation: pulse 1.5s infinite;
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 15px;
+}
+
+.card-text {
+    padding: 10px 15px;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+}
+
+.card-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #000, #7b7962);
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    font-family: 'poppins';
+}
+
+.card-button:hover {
+    text-decoration: none;
+    background-color: #1D3461;
+    color: #fff;
+
+}
+
+
+@-webkit-keyframes pulse {
+    0% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    70% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+    }
+
+    100% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+    }
+}
+
+#Accueiltext h4 {
+  font-family: 'poppins';
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+}

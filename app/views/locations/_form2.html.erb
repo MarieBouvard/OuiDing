@@ -1,0 +1,71 @@
+<%= form_for @location do |f| %>
+    <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Nom de location", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "Adresse", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :zip_code, autofocus: true, autocomplete: "zip_code", placeholder: "Code postal", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :city, autofocus: true, autocomplete: "city", placeholder: "Ville", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :rooms, autofocus: true, autocomplete: "rooms", placeholder: "Nombre de pièces", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :superficy, autofocus: true, autocomplete: "superficy", placeholder: "Superficie", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :price, autofocus: true, autocomplete: "price", placeholder: "Prix/nuit", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.text_field :description, autofocus: true, autocomplete: "description", placeholder: "Description", class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.collection_select :categorie_id, Categorie.order(:name), :id, :name, include_blank: true, class:"formControl" %>
+        <br/>
+        </div>
+        <br/>
+
+        <div class="field form-group">
+            <%= f.file_field :picture %>
+        </div>
+        <br/>
+
+    
+        <div class="actions">
+            <%= f.submit "Mettre à jour", :class => 'btnbis' %>
+        </div>
+        
+<% end %>
+    
+    
+                

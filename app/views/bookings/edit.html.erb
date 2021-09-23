@@ -1,0 +1,17 @@
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Modifier la réservation</div>
+        <div class="card-body">
+          <br/>
+            <%= render 'form', booking: @booking %>
+        <br/>
+            <%= link_to 'Voir la réservation', @booking, class:"links" %> |
+            <%= link_to 'Toutes mes réservations', bookings_path, class:"links" %>
+        </div>
+    </div>
+  </div>
+</div>
+      
+

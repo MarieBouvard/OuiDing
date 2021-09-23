@@ -1,0 +1,15 @@
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Modifier la location</div>
+        <div class="card-body">
+          <br/>
+            <%= render 'form2', location: @location %>
+        <br/>
+            <%= link_to 'Voir la location', @location, class:"links" %> |
+            <%= link_to 'Toutes mes locations', locations_path, class:"links" %>
+        </div>
+    </div>
+  </div>
+</div>

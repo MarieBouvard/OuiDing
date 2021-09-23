@@ -1,0 +1,37 @@
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Informations sur la réservation</div>
+        <div class="card-body">
+          <br/>
+          <p>
+            <strong>Location name:</strong>
+            <%= @booking.location.name %>
+          </p>
+
+          <p>
+            <strong>Start:</strong>
+            <%= @booking.start %>
+          </p>
+
+          <p>
+            <strong>End:</strong>
+            <%= @booking.ends %>
+          </p>
+
+          <p>
+            <strong>Location cost:</strong>
+            <%= @booking.location.price %>
+          </p>
+          <br/>
+
+            <%= link_to 'Modifier la réservation', edit_booking_path(@booking), class:"links" %> |
+            <%= link_to 'Toutes mes réservations', bookings_path, class:"links" %>
+        </div>
+    </div>
+  </div>
+</div>
+<br/>
+
+<p id="notice" class="text-center"><strong><%= notice %></strong></p>

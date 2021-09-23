@@ -1,0 +1,58 @@
+<br/>
+<% if user_signed_in? %>
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-10 mx-auto">
+    <div class="card text-center">
+      <div class="card-header text-center">Toutes mes réservations</div>
+        <ul class="list-group list-group-flush">
+        <% @bookings.each do |booking| %>
+          <li class="list-group-item"><strong>Location :</strong> <%= booking.location.name %> | <strong>Start :</strong> <%= booking.start %> | 
+          <strong>End :</strong> <%= booking.ends %> | <strong>User :</strong> <%= booking.user.email %> 
+          | <br/><%= link_to 'Show', booking, class:"links" %> | <%= link_to 'Edit', edit_booking_path(booking), class:"links" %> | <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'En êtes-vous sûrs ??' }, class:"links" %></li>
+          
+        <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<br/>
+<br/>
+
+<div class="row">
+  <div class="col-sm-10 mx-auto">
+    <div class="card text-center">
+      <div class="card-header text-center">Réservations du jour</div>
+        <ul class="list-group list-group-flush">
+        <% @todays.each do |booking| %>
+          <li class="list-group-item"><strong>Location :</strong> <%= booking.location.name %> | <strong>Start :</strong> <%= booking.start %> | 
+          <strong>End :</strong> <%= booking.ends %> | <strong>User :</strong> <%= booking.user.email %> 
+          | <br/><%= link_to 'Show', booking, class:"links" %> | <%= link_to 'Edit', edit_booking_path(booking), class:"links" %> | <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'En êtes-vous sûrs ??' }, class:"links" %></li>
+          
+        <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="text-center">
+  <%= link_to 'Nouvelle réservation', new_booking_path, class:"links" %><br/><br/>
+  <%= link_to 'Accueil', root_path, class:"links" %>
+</div>
+
+
+<% else %>
+<br/>
+<div class="row">
+  <div class="col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Vous avez besoin d'être connecté pour voir vos réservations!</div>
+        <div class="card-body">
+          <%= link_to 'Se connecter', new_user_session_path %>
+        </div>
+    </div>
+  </div>
+</div>
+<% end %>

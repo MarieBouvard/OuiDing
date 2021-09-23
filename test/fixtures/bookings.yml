@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location_name: MyString
+  start: 2021-09-13 14:36:40
+  end: 2021-09-13 14:36:40
+  location_cost: 9.99
+
+two:
+  location_name: MyString
+  start: 2021-09-13 14:36:40
+  end: 2021-09-13 14:36:40
+  location_cost: 9.99

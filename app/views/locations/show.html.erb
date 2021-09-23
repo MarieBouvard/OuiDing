@@ -1,0 +1,24 @@
+<div class="container" style="margin-top:50px;">
+    <div class="row">
+        <div class="col-md-3 mx-auto">
+            <div class="card-sl shadow-lg">
+                <div class="card-image">
+                    <%= image_tag @location.picture, class:"img-fluid", width: "auto" %>
+                </div>
+
+                <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                <div class="card-heading">
+                    <%= @location.name %>
+                </div>
+                <div class="card-text">
+                    <%= @location.description %>
+                </div>
+                <div class="card-text">
+                    <%= @location.price %> €
+                </div>
+                <a href="#" class="card-button"> Réserver</a>
+                
+            </div>
+        </div>
+    </div> 
+</div>

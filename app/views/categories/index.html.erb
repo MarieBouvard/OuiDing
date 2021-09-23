@@ -1,0 +1,25 @@
+
+<div class="container">
+<br/>
+    <h2 class="text-center">Catégories</h2>
+<br/>
+    <h3 class="text-center">Retrouvez toutes les locations proposées par catégorie</h3>
+<br/>
+<br/>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 ">
+<% @categories.each do |categorie| %>
+  <div class="col mx-auto">
+    <div class="card-sl shadow-lg mx-auto text-center">
+        <div class="card-image">
+            <%= image_tag categorie.picture, class:"img-fluid", width: "auto" if categorie.picture.attached? %>
+        </div>
+          <%= categorie.name %>
+        <div class="col mx-auto text-center">
+          <%= link_to 'Détails', category_path(categorie), class:"links" %>     
+        </div>
+    </div>
+  </div>
+
+<% end %>
+</div> 
+</div>

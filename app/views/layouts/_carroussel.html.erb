@@ -1,0 +1,45 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag("carrou1.jpg", class: "d-block w-100") %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="animated bounceInRight" style="animation-delay: 1s">OuiDing</h5>
+              <p class="animated bounceInLeft" style="animation-delay: 2s">Vous recherchez un site qui centralise des endroits pour réaliser un mariage ou un anniversaire?<br/>
+              Vous êtes au bon endroit!</p>
+              <p class="animated bounceInRight" style="animation-delay: 3s"><a href="#">Plus d'informations</a></p>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+      <%= image_tag("carrou2.jpg", class: "d-block w-100") %>
+        <div class="carousel-caption d-none d-md-block">
+          <h4 class="animated zoomIn" style="animation-delay: 1s">Trouvez le lieu de vos envies!</h4>
+            <p class="animated fadeInRight" style="animation-delay: 2s">De la Bretagne à la Provence en passant par Monaco, vous trouverez forcèment votre bonheur pour le jour J!</p>
+            <p class="animated zoomIn" style="animation-delay: 3s"><a href="#">Plus d'informations</a></p>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+      <%= image_tag("carrou3.jpg", class: "d-block w-100") %>
+        <div class="carousel-caption d-none d-md-block">
+          <h4 class="animated zoomIn" style="animation-delay: 1s">Tarifs avantageux</h4>
+            <p class="animated fadeInLeft" style="animation-delay: 2s">Et les tarifs sont plus qu'abordables</p>
+            <p class="animated zoomIn" style="animation-delay: 3s"><a href="#">Plus d'informations</a></p>
+        </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

@@ -1,0 +1,25 @@
+<div id="res">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% @locations.each do |location| %>
+      <div class="col">
+        <div class="card h-100 text-center shadow-lg bg-light">      
+          <%= image_tag location.picture, width: "auto" if location.picture.attached? %>
+            <div class="card-body">
+            <h5 class="card-title"><%= location.name %></h5>
+              <div class="text">
+              <br/>
+                <p class="pt-2"><%= location.price %> €</p>
+                <p class="pt-2 pb-2">Ville : <%= location.city %></p> 
+               
+            
+                <%= button_to "Plus d'informations", location_path(location), :id => "open-contacts-dialog-btn",
+      :class => "btnbis2", :method => :get %>
+                     
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

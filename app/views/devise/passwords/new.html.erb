@@ -1,0 +1,33 @@
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Vous avez oublié votre mot de passe?</div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">Renseignez votre adresse email pour recevoir les instructions pour la modification de votre mot de passe</p>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+          <br/>
+
+          <div class="field form-group">
+            <i class="fas fa-envelope"></i>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"formControl" %>
+          <br/>
+          </div>
+          
+
+          <div class="actions">
+          <br/>
+            <%= f.submit "Envoyer les instructions", :class => 'btnbis' %>
+          </div>
+          <br/>
+
+          <%= render "devise/shared/links" %>
+        <% end %>
+             
+        </div>
+    </div>
+  </div>
+</div>
+<br/>

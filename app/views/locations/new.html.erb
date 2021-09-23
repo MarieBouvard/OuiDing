@@ -1,0 +1,32 @@
+<br/>
+<% if user_signed_in? %>
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Nouvelle location</div>
+        <div class="card-body">
+          <h5 class="card-title">Enregistrer les informations ci-dessous:</h5>
+
+            <%= render 'form', location: @location %>
+            <br/>
+            <%= link_to 'Tous mes biens proposés à la location', locations_path, class:"links" %>
+        </div>
+    </div>
+  </div>
+</div>
+<br/>
+ 
+<% else %>
+<br/>
+  <div class="row">
+    <div class="col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+      <div class="card text-center">
+        <div class="card-header">Vous avez besoin d'être connecté pour proposer votre bien à la location</div>
+          <div class="card-body">
+            <%= link_to 'Se connecter', new_user_session_path, class:"links" %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% end %>

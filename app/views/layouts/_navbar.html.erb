@@ -1,0 +1,46 @@
+<div id="body2"">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">OuiDing</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <%= link_to 'Home', root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Evènementiel', categories_path, class:"nav-link" %>
+         
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Faire une réservation', new_booking_path, class:"btn nav-link" %>
+        </li>
+        <li class="nav-item">
+              <%= link_to 'Proposer une location', new_location_path, class:"nav-link" %>
+        </li>
+
+        <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Modifier le profil', edit_user_registration_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Déconnection', destroy_user_session_path, :method=>'delete', class:"nav-link"%>
+            </li>
+        <% else %>
+            <li class="nav-item">
+              <%= link_to 'Inscription', new_user_registration_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Connection', new_user_session_path, class:"nav-link" %>
+            </li>
+        <% end %>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+

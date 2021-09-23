@@ -1,0 +1,54 @@
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Formulaire d'inscription</div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <br/>
+           
+              <div class="field form-group">
+                <i class="fas fa-envelope"></i>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"formControl" %>
+              <br/>
+              </div>
+              <br/>
+             
+              
+              <div class="field form-group">
+              <br/>
+                <i class="fas fa-lock"></i>
+                  <%= f.password_field :password, autocomplete: "new-password", placeholder:"Mot de passe", class:"formControl" %>
+                  <br/>  
+                    <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> caractères minimum)</em>
+                    <% end %>
+              </div>
+              <br/>
+
+              <div class="field form-group">
+                <i class="fas fa-lock"></i>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirmation mot de passe", class:"formControl" %>
+              </div>   
+                  
+              <div class="field form-group">
+              <br/>
+                <label>
+                  <input id="check_1" name="check_1" type="checkbox" require><small>J'ai lu et j'accepte les conditions d'utilisation.</small></input>
+                    <div class="invalid-feedback">Vous devez vérifier la boite.</div>
+                </label>
+              </div>
+              
+              <div class="actions">
+              <br/>
+                <%= f.submit "Créer un compte", :class => 'btnbis' %>
+              </div>
+
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+<br/>

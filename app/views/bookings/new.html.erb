@@ -1,0 +1,32 @@
+<br/>
+<% if user_signed_in? %>
+<br/>
+<div class="row">
+  <div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+    <div class="card text-center">
+      <div class="card-header">Nouvelle réservation</div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+
+            <%= render 'form', booking: @booking %>
+            <br/>
+            <%= link_to 'Toutes mes réservations', bookings_path, class:"links" %>
+        </div>
+    </div>
+  </div>
+</div>
+<br/>
+ 
+<% else %>
+<br/>
+  <div class="row">
+    <div class="col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+      <div class="card text-center">
+        <div class="card-header">Vous avez besoin d'être connecté pour voir vos réservations!</div>
+          <div class="card-body">
+            <%= link_to 'Se connecter', new_user_session_path, class:"links" %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% end %>
