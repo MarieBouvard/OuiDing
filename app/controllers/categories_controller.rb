@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def show
     @categorie = Categorie.find(params[:id])
-    @locations = Location.find_by_categorie(@categorie)
+    @locations = Location.all
   end
 
   def new

@@ -21,7 +21,6 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(post_params)
-    @location.user = current_user
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: "La location a été rajoutée avec succés"}
@@ -60,7 +59,7 @@ class LocationsController < ApplicationController
 
   def correct_user
     @location = Location.find(params[:id])
-    unless current_user == @location.user
+    unless current_user == @location.users
       redirect_to(@location, notice: "Vous ne pouvez pas réaliser cette action")
     end
   end

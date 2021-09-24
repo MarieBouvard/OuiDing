@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_144023) do
+ActiveRecord::Schema.define(version: 2021_09_24_085228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,9 +69,7 @@ ActiveRecord::Schema.define(version: 2021_09_23_144023) do
     t.string "picture"
     t.text "description"
     t.bigint "categorie_id"
-    t.bigint "user_id"
     t.index ["categorie_id"], name: "index_locations_on_categorie_id"
-    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,5 +89,4 @@ ActiveRecord::Schema.define(version: 2021_09_23_144023) do
   add_foreign_key "bookings", "locations"
   add_foreign_key "bookings", "users"
   add_foreign_key "locations", "categories", column: "categorie_id"
-  add_foreign_key "locations", "users"
 end

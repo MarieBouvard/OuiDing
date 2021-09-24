@@ -35,8 +35,7 @@ rooms: rand(1..10),
 superficy: rand(100..350),
 price: rand(850..5000),
 description: "Elegant lieu pour fêter un mariage.", 
-categorie: categorie1,
-user: user1)
+categorie: categorie1)
 location1.picture.attach(io: File.open("app/assets/images/thum1.jpg"), filename: 'thum.jpg', content_type: 'image/jpeg')
 location1.save!
 puts "Les salles de réception sont créées !"
