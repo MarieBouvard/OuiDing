@@ -12,7 +12,7 @@
           <%= link_to 'Home', root_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Evènementiel', categories_path, class:"nav-link" %>
+          <%= link_to 'Toutes les locations', locations_path, class:"nav-link" %>
          
         </li>
         <li class="nav-item">
@@ -21,7 +21,7 @@
         <li class="nav-item">
               <%= link_to 'Proposer une location', new_location_path, class:"nav-link" %>
         </li>
-
+       
         <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to 'Modifier le profil', edit_user_registration_path, class:"nav-link" %>

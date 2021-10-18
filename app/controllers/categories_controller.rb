@@ -9,7 +9,43 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @categorie = Categorie.new
   end
+
+  def create
+    @categorie = Categorie.new(categories_params)
+      if @categorie.save
+        redirect_to categories_path
+      else
+        render :new
+      end
+    end
+
+
+  def edit
+    @categorie = Categorie.find(params[:id])
+  end
+
+  def update
+    respond_to do |format|
+      if @categorie.update(post_params)
+        format.html { redirect_to @categorie, notice: "Location was successfully updated." }
+        format.json { render :show, status: :ok, location: @categorie }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @categorie.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+def destroy
+  @categorie = Categorie.find(params[:id])
+  @categorie.destroy
+  redirect_to categories_path
+end
+
+
 
 private
 

@@ -8,12 +8,11 @@ class Booking < ApplicationRecord
 
     #bookings cannot be in the past for the start and end time
     def no_past_booking
-        if start < Time.current
+        if start && (start < Time.current )
             errors.add(:Start, "La réservation ne peut pas se faire dans le passé")
     
         end
     end
-
 
     #Twice bookings impossible
     def overlaps

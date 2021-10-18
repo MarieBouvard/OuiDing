@@ -1,0 +1,15 @@
+<div class="row">
+<div class=" col-sm-8 col-md-6 col-lg-4 mx-auto my-auto">
+  <div class="card text-center">
+    <div class="card-header">Nouvelle catégorie</div>
+      <div class="card-body">
+        <h5 class="card-title">Enregistrer les informations ci-dessous:</h5>
+
+          <%= render 'form', categorie: @categorie %>
+          <br/>
+          <%= link_to 'Toutes les catégories', categories_path, class:"links" %>
+      </div>
+  </div>
+</div>
+</div>
+<br/>

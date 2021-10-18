@@ -1,15 +1,12 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+before_action :set_location, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, except: [:show, :index]
   
 
   def index
-    if params[:user_id] && @user = User.find_by(id: params[:user_id])
-      @locations = @user.locations
-    else
-      @locations = Location.all
-    end
+    @locations = Location.search(params[:search])
   end
+  
 
   def show
   end
@@ -19,11 +16,12 @@ class LocationsController < ApplicationController
     @categorie = Categorie.all
   end 
 
+
   def create
     @location = Location.new(post_params)
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: "La location a été rajoutée avec succés"}
+        format.html { redirect_to @location, notice: "La location a été ajoutée avec succés"}
         format.json { render :show, status: :created, location: @location } 
     else
         format.html { render :new }
@@ -34,7 +32,6 @@ class LocationsController < ApplicationController
 
 
   def edit
-    @location = Location.find(params[:id])
   end
 
 
@@ -52,16 +49,8 @@ class LocationsController < ApplicationController
 
 
   def destroy
-    @location = Location.find(params[:id])
     @location.destroy
     redirect_to locations_path
-  end
-
-  def correct_user
-    @location = Location.find(params[:id])
-    unless current_user == @location.users
-      redirect_to(@location, notice: "Vous ne pouvez pas réaliser cette action")
-    end
   end
 
   private
@@ -71,6 +60,6 @@ class LocationsController < ApplicationController
   end
 
   def post_params
-    params.require(:location).permit(:name, :address, :zip_code, :city, :rooms, :supercify, :price, :picture, :description, :categorie_id, :user_id)
+    params.require(:location).permit(:name, :address, :zip_code, :city, :rooms, :superficy, :price, :picture, :description, :categorie_id)
   end
 end
