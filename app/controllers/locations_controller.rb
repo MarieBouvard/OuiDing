@@ -1,13 +1,15 @@
 class LocationsController < ApplicationController
+include LocationsHelper
 before_action :set_location, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!, except: [:show, :index]
+before_action :require_login, only: [:edit, :update, :destroy]
+
   
 
   def index
     @locations = Location.search(params[:search])
     @locations = Location.page(params[:page])
     @categories = Categorie.all
-    @users = User.all
   end
   
 

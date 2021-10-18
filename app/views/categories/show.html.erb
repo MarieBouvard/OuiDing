@@ -27,10 +27,14 @@
                 </div>
 
                 <div class="col mx-auto text-center">
+                <% if current_user == nil %>
                   <%= link_to 'Détails', location, class:"links" %>     
+                <% else %>
+                  <%= link_to 'Détails', location, class:"links" %>
                   <%= link_to 'Modifier', edit_location_path(location), class:"links" %>     
                   <%= link_to 'Supprimer', location, method: :delete, data: { confirm: 'En êtes-vous sûrs ?' }, class:"links" %>
-                </div>
+                <% end %>   
+                  </div>
             </div>
           </div>
        

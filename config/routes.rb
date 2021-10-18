@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :categories
   resources :locations
   resources :bookings
+  resources :pages
 
-  get  "/locationbyuser/:id" => 'locations#locationbyuser', as: :locationbyuser
+  get 'about' => 'pages#about'
 
   devise_for :users
   

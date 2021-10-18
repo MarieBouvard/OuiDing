@@ -9,7 +9,7 @@ include CategoriesHelper
 
   def show
     @categorie = Categorie.find(params[:id])
-    @locations = Location.all
+    @locations = @categorie.locations
   end
 
   def new

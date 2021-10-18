@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
     belongs_to :user, inverse_of: :bookings
-    belongs_to :location, inverse_of: :bookings
+    belongs_to :location, inverse_of: :bookings, dependent: :destroy
     validates_presence_of :start, :ends
     validate :no_past_booking
     validate :overlaps

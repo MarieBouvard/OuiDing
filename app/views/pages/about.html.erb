@@ -1,0 +1,35 @@
+<div class="container" style="margin-top:50px;">
+  <h1 class="text-center">Mes locations proposées</h1>
+    <br />      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <% @locations.each do |location| %>
+          <div class="col">
+            <div class="card-sl shadow-lg">
+              <div class="card-image">
+                <%= image_tag location.picture, class:"img-fluid", width: "auto" if location.picture.attached? %>
+              </div>
+              <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                <div class="card-heading">
+                  <%= location.name %>
+                </div>
+                <div class="card-text">
+                  <p>Superficy : <%= location.superficy %> m2 </p>
+                  <p>Pièces : <%= location.rooms %></p>
+                  <p>Prix : <%= location.price %> €</p>
+                </div>
+
+                <div class="col mx-auto text-center">
+                  <% if current_user == nil %>
+                    <%= link_to 'Détails', location, class:"links" %>
+                  <% else %>
+                    <%= link_to 'Détails', location, class:"links" %>     
+                    <%= link_to 'Modifier', edit_location_path(location), class:"links" %>     
+                    <%= link_to 'Supprimer', location, method: :delete, data: { confirm: 'En êtes-vous sûrs ?' }, class:"links" %>
+                  <% end %> 
+                </div>
+            </div>
+          </div>
+       
+        <% end %>
+      </div> 
+    </div>
