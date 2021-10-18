@@ -3,6 +3,7 @@ include LocationsHelper
 before_action :set_location, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!, except: [:show, :index]
 before_action :require_login, only: [:edit, :update, :destroy]
+before_action :only_admin_for_location_updates, only: [:edit, :update, :destroy]
 
   
 

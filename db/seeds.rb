@@ -11,3 +11,4 @@ ActiveRecord::Base.connection.execute("ALTER SEQUENCE bookings_id_seq RESTART WI
 User.destroy_all
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE users_id_seq RESTART WITH 1")
 
+User.create(email: "marie@gmail.com", password:"123456", admin: true);
