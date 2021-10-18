@@ -1,3 +1,4 @@
+
 <div class="container" style="margin-top:50px;">
     <div class="row">
         <div class="col-md-3 mx-auto">
@@ -16,7 +17,7 @@
                 <div class="card-text">
                     <%= @location.price %> €
                 </div>
-                <a href="#" class="card-button"> Réserver</a>
+                <%= link_to "Réserver", new_booking_path(@location.id), class:"nav-link" %>
                 
             </div>
         </div>

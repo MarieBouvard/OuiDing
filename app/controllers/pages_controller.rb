@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @locations = Location.all
+    @locations = Location.limit(8)
   end
 
   def show

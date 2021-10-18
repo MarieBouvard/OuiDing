@@ -5,6 +5,8 @@ before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @locations = Location.search(params[:search])
+    @locations = Location.page(params[:page])
+    @categories = Categorie.all
   end
   
 

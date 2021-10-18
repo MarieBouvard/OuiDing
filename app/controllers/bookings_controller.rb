@@ -3,7 +3,6 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   
-
   
   # GET /bookings or /bookings.json
   def index

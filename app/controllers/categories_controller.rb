@@ -1,4 +1,8 @@
 class CategoriesController < ApplicationController
+include CategoriesHelper
+  before_action :set_categorie, only: [:show, :edit, :update, :destroy]
+  before_action :only_admin_for_categories_updates, only: [:edit, :update, :new, :create, :destroy, :index]
+
   def index
     @categories = Categorie.all
   end
@@ -28,8 +32,8 @@ class CategoriesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @categorie.update(post_params)
-        format.html { redirect_to @categorie, notice: "Location was successfully updated." }
+      if @categorie.update(categories_params)
+        format.html { redirect_to @categorie, notice: "Category was successfully updated." }
         format.json { render :show, status: :ok, location: @categorie }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -45,9 +49,11 @@ def destroy
   redirect_to categories_path
 end
 
-
-
 private
+
+def set_categorie
+  @categorie = Categorie.find(params[:id])
+end
 
 # Only allow a list of trusted parameters through.
 def categories_params

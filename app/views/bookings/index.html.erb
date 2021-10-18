@@ -8,8 +8,10 @@
         <% @bookings.each do |booking| %>
           <li class="list-group-item"><strong>Location :</strong> <%= booking.location.name %> | <strong>Start :</strong> <%= booking.start %> | 
           <strong>End :</strong> <%= booking.ends %> | <strong>User :</strong> <%= booking.user.email %> 
-          | <br/><%= link_to 'Show', booking, class:"links" %> | <%= link_to 'Edit', edit_booking_path(booking), class:"links" %> | <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'En êtes-vous sûrs ??' }, class:"links" %></li>
-          
+          | <br/>
+              <%= link_to 'Show', booking, class:"links" %> | 
+              <%= link_to 'Edit', edit_booking_path(booking), class:"links" %> | 
+              <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'En êtes-vous sûrs ??' }, class:"links" %></li>
         <% end %>
         </ul>
     </div>
@@ -27,9 +29,15 @@
         <% @todays.each do |booking| %>
           <li class="list-group-item"><strong>Location :</strong> <%= booking.location.name %> | <strong>Start :</strong> <%= booking.start %> | 
           <strong>End :</strong> <%= booking.ends %> | <strong>User :</strong> <%= booking.user.email %> 
-          | <br/><%= link_to 'Show', booking, class:"links" %> | <%= link_to 'Edit', edit_booking_path(booking), class:"links" %> | <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'En êtes-vous sûrs ??' }, class:"links" %></li>
-          
-        <% end %>
+          | <br/>
+            <% if @user.bookings == current_user %>
+              <%= link_to 'Show', booking, class:"links" %> | 
+              <%= link_to 'Edit', edit_booking_path(booking), class:"links" %> | 
+              <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'En êtes-vous sûrs ??' }, class:"links" %></li>
+            <% else %>
+              <p></p>
+            <% end %>
+          <% end %>
         </ul>
     </div>
   </div>

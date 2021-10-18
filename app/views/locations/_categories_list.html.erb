@@ -1,10 +1,16 @@
-
 <div class="container">
 <br/>
-    <h2 class="text-center">Catégories</h2>
+    <h1 class="text-center">Locations par catégories</h1>
 <br/>
-    <h3 class="text-center">Retrouvez toutes les locations proposées par catégorie</h3>
+    <h4 class="text-center">Retrouvez votre location idéale, ou<br />
+    cherchez là selon la catégorie souhaitée.</h4>
 <br/>
+<div class="row mx-auto">
+    <h4 class="text-center">
+        <p><%= link_to 'Proposer une nouvelle location', new_location_path, class:"links" %>  
+      <%= link_to 'Faire une nouvelle réservation', new_booking_path, class:"links" %></p>
+    </h4>
+</div>
 <br/>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 ">
 <% @categories.each do |categorie| %>
@@ -15,9 +21,13 @@
         </div>
           <%= categorie.name %>
         <div class="col mx-auto text-center">
+        <% if current_user && current_user.admin %>
           <%= link_to 'Détails', category_path(categorie), class:"links" %>     
           <%= link_to 'Modifier', edit_category_path(categorie), class:"links" %>     
           <%= link_to 'Supprimer', categorie, method: :delete, data: { confirm: 'En êtes-vous sûrs ?' }, class:"links" %>
+        <% else %>
+            <%= link_to 'Détails', category_path(categorie), class:"links" %>
+        <% end %>
         </div>
     </div>
 
@@ -26,3 +36,6 @@
 <% end %>
 </div> 
 </div>
+<br />
+<br />
+<hr>

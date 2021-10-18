@@ -3,6 +3,7 @@ class Location < ApplicationRecord
     has_many :bookings
     has_one_attached :picture
     has_many :users, through:  :bookings
+    paginates_per 20
 
 
     def self.search(search)
