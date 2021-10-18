@@ -1,22 +1,7 @@
-<br/>
-  <%= render "locations/categories_list" %>
-   <div class="container" style="margin-top:50px;">
-   <h1 class="text-center">Toutes les locations</h1>
-        <br />
-        <div class="row">
-          <div class="col text-center mx-auto">
-          <%= form_tag locations_path, :method => 'get' do %>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Recherche" %>
-          <% end %>
-          </div>
-        </div>
-        <br />
-        <br />
-
-    
-        <%= paginate @locations %>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="container" style="margin-top:50px;">
+  <h1 class="text-center">Mes locations proposées</h1>
+    <br />      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         <% @locations.each do |location| %>
           <div class="col">
             <div class="card-sl shadow-lg">

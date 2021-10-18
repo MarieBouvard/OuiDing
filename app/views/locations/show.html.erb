@@ -12,12 +12,10 @@
                     <%= @location.name %>
                 </div>
                 <div class="card-text">
-                    <%= @location.description %>
+                    <p><%= @location.description %></p>
+                    <p><%= @location.price %> €</p>
                 </div>
-                <div class="card-text">
-                    <%= @location.price %> €
-                </div>
-                <%= link_to "Réserver", new_booking_path(@location.id), class:"nav-link" %>
+                <%= link_to "Réserver", new_booking_path(@location.id), class:"nav-link text-center" %>
                 
             </div>
         </div>

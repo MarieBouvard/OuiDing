@@ -10,7 +10,7 @@
 
             <%= render 'form', location: @location %>
             <br/>
-            <%= link_to 'Tous mes biens proposés à la location', locations_path, class:"links" %>
+            <%= link_to 'Tous mes biens proposés à la location', locationbyuser_path(@location.users, @location), class:"links" %>
         </div>
     </div>
   </div>

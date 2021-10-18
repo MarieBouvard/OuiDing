@@ -7,6 +7,7 @@ before_action :authenticate_user!, except: [:show, :index]
     @locations = Location.search(params[:search])
     @locations = Location.page(params[:page])
     @categories = Categorie.all
+    @users = User.all
   end
   
 
@@ -34,6 +35,7 @@ before_action :authenticate_user!, except: [:show, :index]
 
 
   def edit
+    @location = Location.find(params[:id])
   end
 
 
@@ -53,6 +55,11 @@ before_action :authenticate_user!, except: [:show, :index]
   def destroy
     @location.destroy
     redirect_to locations_path
+  end
+
+  def locationbyuser
+    @user = current_user
+    @locations = @user.locations
   end
 
   private
