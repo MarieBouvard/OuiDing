@@ -12,10 +12,8 @@
           <div class="col text-center mx-auto">
           <%= form_tag locations_path, :method => 'get' do %>
             <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search" %>
+            <%= submit_tag "Recherche" %>
           <% end %>
-
-          <%= link_to "Advanced Search", new_search_path %>
           </div>
         </div>
         <br/>
