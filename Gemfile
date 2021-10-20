@@ -19,6 +19,8 @@ gem 'jquery-rails'
 
 gem 'kaminari'
 
+gem 'aws-sdk-s3', require: false
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
